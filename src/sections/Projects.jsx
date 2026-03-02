@@ -2,6 +2,7 @@ import {AnimatedBorderButton} from "@/components/AnimatedBorderButton"
 import { SiGithub } from "@icons-pack/react-simple-icons"
 import { ArrowUpRight, BookOpenText, TestTubeDiagonal } from "lucide-react"
 import {FadeUp} from "@/components/FadeUp"
+import { usePostHog } from '@posthog/react'
 
 const projects = [
     // { title, description, image, tags, link, github, docs, demo }
@@ -45,6 +46,7 @@ const projects = [
 ]
 
 export const Projects = () => {
+    const posthog = usePostHog()
     return <section id="projects" className="py-16 md:py-32 relative overflow-hidden">
         {/* Bg glows */}
         <div className="absolute top-0 left-0 w-full h-full">
@@ -86,28 +88,36 @@ export const Projects = () => {
                             <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 invisible md:visible group-hover:opacity-100 transition-opacity duration-300">
                                 {
                                     project.link && (
-                                        <a aria-label="Site" href={project.link} target="_blank" rel="noopener noreferrer" className={`p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all`}>
+                                        <a aria-label="Site" href={project.link} target="_blank" rel="noopener noreferrer"
+                                            onClick={() => posthog.capture('project_link_clicked', { project_title: project.title, link_type: 'site', href: project.link })}
+                                            className={`p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all`}>
                                             <ArrowUpRight className="w-5 h-5" />
                                         </a>
                                     )
                                 }
                                 {
                                     project.github && (
-                                        <a aria-label="GitHub" href={project.github} target="_blank" rel="noopener noreferrer" className={`p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all`}>
+                                        <a aria-label="GitHub" href={project.github} target="_blank" rel="noopener noreferrer"
+                                            onClick={() => posthog.capture('project_link_clicked', { project_title: project.title, link_type: 'github', href: project.github })}
+                                            className={`p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all`}>
                                             <SiGithub className="w-5 h-5" />
                                         </a>
                                     )
                                 }
                                 {
                                     project.docs && (
-                                        <a aria-label="Documentation" href={project.docs} target="_blank" rel="noopener noreferrer" className={` p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all`}>
+                                        <a aria-label="Documentation" href={project.docs} target="_blank" rel="noopener noreferrer"
+                                            onClick={() => posthog.capture('project_link_clicked', { project_title: project.title, link_type: 'docs', href: project.docs })}
+                                            className={` p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all`}>
                                             <BookOpenText className="w-5 h-5" />
                                         </a>
                                     )
                                 }
                                 {
                                     project.demo && (
-                                        <a aria-label="Demo" href={project.demo} target="_blank" rel="noopener noreferrer" className={`p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all`}>
+                                        <a aria-label="Demo" href={project.demo} target="_blank" rel="noopener noreferrer"
+                                            onClick={() => posthog.capture('project_link_clicked', { project_title: project.title, link_type: 'demo', href: project.demo })}
+                                            className={`p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all`}>
                                             <TestTubeDiagonal className="w-5 h-5" />
                                         </a>
                                     )

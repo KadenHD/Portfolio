@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser"
 import { SiCalendly } from "@icons-pack/react-simple-icons"
 import { AnimatedButton } from "@/components/AnimatedButton"
 import {FadeUp} from "@/components/FadeUp"
+import { usePostHog } from '@posthog/react'
 
 const contactInfo = [
     {
@@ -41,6 +42,7 @@ const maps = [
 ]
 
 export const Contact = () => {
+    const posthog = usePostHog()
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -73,6 +75,12 @@ export const Contact = () => {
                 message: formData.message,
             }, publicKey)
 
+            posthog.capture('contact_form_submitted', {
+                sender_name: formData.name,
+                sender_email: formData.email,
+                message_length: formData.message.length,
+            })
+
             setSubmitStatus({
                 type: "success",
                 message: "Message envoyé avec succès ! Je vous répondrai bientôt."
@@ -80,6 +88,10 @@ export const Contact = () => {
             setFormData({ name:"", email: "", message: "" });
         } catch (err) {
             console.log("EmailJS error:", err)
+            posthog.capture('contact_form_error', {
+                error_message: err.text || err.message || 'unknown error',
+            })
+            posthog.captureException(err)
             setSubmitStatus({
                 type: "error",
                 message: err.text || "Impossible d'envoyer le message. Veuillez réessayer plus tard."
@@ -157,7 +169,10 @@ export const Contact = () => {
                     </div>
                     {/* Calendly Button */}
                     <div className="flex flex-row items-center justify-center">
-                        <AnimatedButton size="lg" className="w-full" onClick={() => window.open("https://calendly.com/pierre-clement-oise/30min","_blank","noopener,noreferrer")}>
+                        <AnimatedButton size="lg" className="w-full" onClick={() => {
+                            posthog.capture('calendly_clicked', { source: 'contact_section' })
+                            window.open("https://calendly.com/pierre-clement-oise/30min","_blank","noopener,noreferrer")
+                        }}>
                             <SiCalendly className="w-5 h-5" />
                             Prendre rendez-vous sur Calendly
                         </AnimatedButton>

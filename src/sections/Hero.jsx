@@ -8,6 +8,7 @@ import { CollectiveWorkIcon } from "@/icons/CollectiveWorkIcon"
 import { UTCIcon } from "@/icons/UTCIcon"
 import {FadeUp} from "@/components/FadeUp"
 import { useState } from "react";
+import { usePostHog } from '@posthog/react'
 
 const socialLinks = [
     {icon: LinkedInIcon, href: "https://www.linkedin.com/in/pierre--clement", label: "LinkedIn"},
@@ -82,8 +83,10 @@ function shuffle(array) {
 const randomizedSkills = shuffle(skills);
 
 export const Hero = () => {
+    const posthog = usePostHog()
     const experienceYears = new Date().getFullYear() - 2021;
     const downloadPDF = () => {
+        posthog.capture('cv_downloaded', { file: 'pierre_clement_cv.pdf' })
         const name = "pierre_clement_cv.pdf"
         const link = document.createElement("a");
         link.href = "/"+name;
@@ -152,12 +155,15 @@ export const Hero = () => {
 
                     {/* CTAs */}
                     <FadeUp className="flex flex-wrap gap-4" delay={0.3} direction="right">
-                        <Button onClick={()=> window.location.href="#contact"} size="lg">
+                        <Button onClick={() => {
+                            posthog.capture('cta_contact_clicked', { source: 'hero_section' })
+                            window.location.href="#contact"
+                        }} size="lg">
                             Contactez-moi
                             <ArrowRight className="w-5 h-5" />
                         </Button>
 
-                        <AnimatedBorderButton   onClick={() => downloadPDF()}>
+                        <AnimatedBorderButton onClick={() => downloadPDF()}>
                             <Download className="w-5 h-5" />
                             Télécharger mon CV
                         </AnimatedBorderButton>
@@ -166,7 +172,9 @@ export const Hero = () => {
                     <FadeUp className="flex items-center gap-4" delay={0.4} direction="right">
                         <span className="text-sm text-muted-foreground">Me retrouver: </span>
                         {socialLinks.map((social, index) => (
-                            <a aria-label={social.label} key={index} href={social.href} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300">
+                            <a aria-label={social.label} key={index} href={social.href} target="_blank" rel="noopener noreferrer"
+                                onClick={() => posthog.capture('social_link_clicked', { platform: social.label, href: social.href, source: 'hero_section' })}
+                                className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300">
                                 {<social.icon className="w-5 h-5" />}
                             </a>
                         ))}

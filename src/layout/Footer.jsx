@@ -7,6 +7,7 @@ import { useState, useEffect, useRef } from "react";
 import { LegalNoticePopup } from "@/layout/LegalNoticePopup";
 import { PrivacyPolicyPopup } from "@/layout/PrivacyPolicyPopup"
 import {FadeUp} from "@/components/FadeUp"
+import { usePostHog } from '@posthog/react'
 
 const socialLinks = [
     {icon: LinkedInIcon, href: "https://www.linkedin.com/in/pierre--clement", label: "LinkedIn"},
@@ -24,13 +25,20 @@ const footerLinks = [
 ];
 
 export const Footer = () => {
+  const posthog = usePostHog()
   const currentYear = new Date().getFullYear();
   const legalRef = useRef(null);
   const privacyRef = useRef(null)
   const [isPrivacyOpen, setPrivacyOpen] = useState(false);
   const [isLegalOpen, setLegalOpen] = useState(false);
-  const openPrivacyPolicy = () => {setPrivacyOpen(true); setLegalOpen(false); window.location.href="#privacy-policy";}
-  const openLegalNotice = () => {setLegalOpen(true); setPrivacyOpen(false); window.location.href="#legal-notice";}
+  const openPrivacyPolicy = () => {
+    posthog.capture('privacy_policy_opened')
+    setPrivacyOpen(true); setLegalOpen(false); window.location.href="#privacy-policy";
+  }
+  const openLegalNotice = () => {
+    posthog.capture('legal_notice_opened')
+    setLegalOpen(true); setPrivacyOpen(false); window.location.href="#legal-notice";
+  }
   const closePrivacyPolicy = () => {
     if (privacyRef.current) {
       privacyRef.current.classList.add("animate-fade-out");
@@ -121,6 +129,7 @@ export const Footer = () => {
                   aria-label={social.label}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => posthog.capture('footer_social_link_clicked', { platform: social.label, href: social.href, source: 'footer' })}
                   className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
                 >
                   <social.icon className="w-5 h-5" />
