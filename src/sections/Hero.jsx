@@ -3,8 +3,8 @@ import { AnimatedBorderButton } from "@/components/AnimatedBorderButton"
 import { LinkedInIcon } from "@/icons/LinkedInIcon"
 import { ArrowRight, Download, ChevronDown } from "lucide-react"
 import { SiGithub } from "@icons-pack/react-simple-icons"
-import { MaltIcon } from "@/icons/MaltIcon"
-import { CollectiveWorkIcon } from "@/icons/CollectiveWorkIcon"
+// import { MaltIcon } from "@/icons/MaltIcon"
+// import { CollectiveWorkIcon } from "@/icons/CollectiveWorkIcon"
 import { UTCIcon } from "@/icons/UTCIcon"
 import {FadeUp} from "@/components/FadeUp"
 import { useState } from "react";
@@ -14,8 +14,8 @@ const socialLinks = [
     {icon: LinkedInIcon, href: "https://www.linkedin.com/in/pierre--clement", label: "LinkedIn"},
     {icon: SiGithub, href: "https://github.com/KadenHD", label: "GitHub"},
     { icon: UTCIcon, href: "https://uteam.fr/consultant/presentation/pierre-clement", label: "UTeam"},
-    {icon: MaltIcon, href: "https://www.malt.fr/profile/pierreclement1", label: "Malt"},
-    {icon: CollectiveWorkIcon, href: "https://www.collective.work/profile/pierre-clement", label: "Collective Work"}
+    // {icon: MaltIcon, href: "https://www.malt.fr/profile/pierreclement1", label: "Malt"},
+    // {icon: CollectiveWorkIcon, href: "https://www.collective.work/profile/pierre-clement", label: "Collective Work"}
 ]
 
 const skills = [
@@ -29,6 +29,7 @@ const skills = [
   "Vue.js",
   "Node.js",
   "Express",
+  "Next.js",
   "FastAPI",
   "API REST",
   "Full-Stack",
@@ -148,7 +149,7 @@ export const Hero = () => {
 
                         <FadeUp delay={0.2} direction="right">
                             <p className="text-lg text-muted-foreground max-w-lg">
-                                Bonjour, je suis Pierre Clément, consultant indépendant spécialisé en ingénierie logicielle. J’accompagne startups et PME dans la conception et le développement de logiciels sur mesure, de l’analyse des besoins à la mise en production.
+                                Consultant indépendant spécialisé en ingénierie logicielle. J’accompagne startups, PME et grands groupes dans la conception et le développement de logiciels sur mesure, de l’analyse des besoins à la mise en production.
                             </p>
                         </FadeUp>
                     </div>

@@ -4,6 +4,8 @@ import { ArrowUpRight, BookOpenText, TestTubeDiagonal } from "lucide-react"
 import {FadeUp} from "@/components/FadeUp"
 import { usePostHog } from '@posthog/react'
 
+const githubLink = "https://github.com/KadenHD"
+
 const projects = [
     // { title, description, image, tags, link, github, docs, demo }
     {
@@ -142,8 +144,8 @@ export const Projects = () => {
 
             {/* View All Projects */}
             <FadeUp delay={0.2} className="text-center mt-12">
-                <AnimatedBorderButton onClick={() => window.location.href="#projects"}>
-                    Voir tous les Projets
+                <AnimatedBorderButton onClick={() => window.open(githubLink, "_blank", "noopener,noreferrer")}>
+                    Voir mes autres Projets
                     <ArrowUpRight className="w-5 h-5" />
                 </AnimatedBorderButton>
             </FadeUp>

@@ -47,7 +47,7 @@ export const About = () => {
                     <div className="space-y-4 text-muted-foreground">
                         <FadeUp delay={0.2}>
                             <p>
-                                Ingénieur logiciel et consultant indépendant, j’accompagne les startups et PME
+                                Ingénieur logiciel et consultant indépendant, j’accompagne les startups, PME et grands groupes
                                 dans la conception, le développement et l’évolution de leurs produits numériques.
                                 Mon objectif : transformer une idée ou un besoin métier en une solution
                                 opérationnelle, fiable et maintenable.
@@ -65,7 +65,7 @@ export const About = () => {
                         <FadeUp delay={0.4}>
                             <p>
                                 Curieux et orienté R&D, je travaille régulièrement sur des projets intégrant
-                                l’intelligence artificielle, le machine learning et l’expérimentation technique.
+                                l’intelligence artificielle et l’expérimentation technique.
                                 J’aime explorer, prototyper rapidement et itérer pour construire des solutions
                                 pertinentes, alignées avec les enjeux réels du projet.
                             </p>
@@ -74,7 +74,7 @@ export const About = () => {
 
                     <FadeUp delay={0.5} className="glass rounded-2xl p-6 glow-border">
                         <p className="font-medium text-foreground">
-                            Seul ou en équipe, je m’implique comme un véritable partenaire technique :
+                            Seul ou avec votre équipe, je m’implique comme un véritable partenaire technique :
                             autonome, rigoureux et force de proposition. Mon rôle ne se limite pas à coder,
                             mais à faire avancer le projet avec des choix techniques clairs, durables
                             et orientés impact.

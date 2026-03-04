@@ -24,21 +24,13 @@ const contactInfo = [
 
 const maps = [
     {
-        value: "Compiègne",
-        href: "https://www.google.fr/maps?q=Compiègne"
+        value: "Oise",
+        href: "https://www.google.fr/maps?q=Oise"
     },
     {
-        value: "Beauvais",
-        href: "https://www.google.fr/maps?q=Beauvais"
-    },
-    {
-        value: "Soissons",
-        href: "https://www.google.fr/maps?q=Soissons"
-    },
-    {
-        value: "Paris",
-        href: "https://www.google.fr/maps?q=Paris"
-    },
+        value: "Île-de-France",
+        href: "https://www.google.fr/maps?q=Île-de-France"
+    }
 ]
 
 export const Contact = () => {
@@ -227,7 +219,7 @@ export const Contact = () => {
                                 </div>
                                 
                             </div>
-                            <p className="text-xs text-muted-foreground">* Dans un rayon alentour de 50 km, pour des missions sur site ou hybride.</p>
+                            <p className="text-xs text-muted-foreground">* Ainsi qu’à distance sur l’ensemble du territoire</p>
                         </div>
                     </FadeUp>
 
