@@ -19,6 +19,12 @@ const socialLinks = [
 ]
 
 const skills = [
+  "Django",
+  "Flask",
+  "Symfony",
+  "Ionic",
+  "Expo",
+  "Electron",
   "TypeScript",
   "JavaScript",
   "Python",
