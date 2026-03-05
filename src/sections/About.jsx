@@ -47,7 +47,7 @@ export const About = () => {
                     <div className="space-y-4 text-muted-foreground">
                         <FadeUp delay={0.2}>
                             <p>
-                                Ingénieur logiciel et consultant indépendant, j’accompagne les startups, PME et grands groupes
+                                Ingénieur logiciel et consultant indépendant, j’accompagne les entreprises
                                 dans la conception, le développement et l’évolution de leurs produits numériques.
                                 Mon objectif : transformer une idée ou un besoin métier en une solution
                                 opérationnelle, fiable et maintenable.

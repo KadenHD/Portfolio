@@ -155,7 +155,7 @@ export const Hero = () => {
 
                         <FadeUp delay={0.2} direction="right">
                             <p className="text-lg text-muted-foreground max-w-lg">
-                                Consultant indépendant spécialisé en ingénierie logicielle. J’accompagne startups, PME et grands groupes dans la conception et le développement de logiciels sur mesure, de l’analyse des besoins à la mise en production.
+                                Consultant indépendant spécialisé en ingénierie logicielle. J’accompagne les entreprises dans la conception et le développement de logiciels sur mesure, de l’analyse des besoins à la mise en production.
                             </p>
                         </FadeUp>
                     </div>
