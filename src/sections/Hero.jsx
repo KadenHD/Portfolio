@@ -93,11 +93,12 @@ export const Hero = () => {
     const posthog = usePostHog()
     const experienceYears = new Date().getFullYear() - 2021;
     const downloadPDF = () => {
-        posthog.capture('cv_downloaded', { file: 'pierre_clement_cv.pdf' })
-        const name = "pierre_clement_cv.pdf"
+        posthog.capture('cv_downloaded', { file: 'CV_Pierre_Clement.pdf' })
+
         const link = document.createElement("a");
-        link.href = "/"+name;
-        link.download = name;
+        link.href = "https://raw.githubusercontent.com/KadenHD/KadenHD/main/CV_Pierre_Clement.pdf";
+        link.download = "CV_Pierre_Clement.pdf";
+        link.target = "_blank";
         link.click();
     }
 
