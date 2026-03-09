@@ -3,7 +3,7 @@ import {FadeUp} from "@/components/FadeUp"
 const experiences = [
     {
         period: "Jan. 2026 - Aujourd'hui",
-        role: "Ingénieur logiciel - Conseil & Développement",
+        role: "Ingénieur logiciel - Conseil IT & Développement",
         company: "Consultant Indépendant - France",
         description: [
             "Conception et développement de solutions logicielles sur mesure (web, mobile, API, automatisation, IA). ",
