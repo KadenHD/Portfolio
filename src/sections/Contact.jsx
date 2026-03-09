@@ -24,12 +24,12 @@ const contactInfo = [
 
 const maps = [
     {
-        value: "Oise",
-        href: "https://www.google.fr/maps?q=Oise"
+        value: "Hauts-de-France",
+        href: "https://www.google.fr/maps?q=HDF"
     },
     {
         value: "Île-de-France",
-        href: "https://www.google.fr/maps?q=Île-de-France"
+        href: "https://www.google.fr/maps?q=IDF"
     }
 ]
 

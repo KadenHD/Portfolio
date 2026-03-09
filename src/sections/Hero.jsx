@@ -140,7 +140,7 @@ export const Hero = () => {
                     <FadeUp delay={0.0} direction="right">
                         <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs md:text-sm text-primary">
                             <span className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                            Ingénieur Logiciel ✦ Conseil & Développement
+                            Ingénieur Logiciel ✦ Conseil IT & Développement
                         </span>
                     </FadeUp>
 

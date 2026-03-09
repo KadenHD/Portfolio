@@ -2,54 +2,64 @@ import {FadeUp} from "@/components/FadeUp"
 
 const experiences = [
     {
-        period: "2026 - Aujourd'hui",
-        role: "Ingénieur logiciel - Conseil & Développement ",
-        company: "Consultant Indépendant",
+        period: "Jan. 2026 - Aujourd'hui",
+        role: "Ingénieur logiciel - Conseil & Développement",
+        company: "Consultant Indépendant - France",
         description: [
-            "Consultant indépendant spécialisé en ingénierie logicielle, j’accompagne les entreprises dans la conception et le développement de solutions sur mesure, de l’architecture à la mise en production. ",
-            "Intégration au sein d'équipes ou pilotage complet de projet, pour des missions courtes comme longues."
+            "Conception et développement de solutions logicielles sur mesure (web, mobile, API, automatisation, IA). ",
+            "Architecture technique et déploiement (Cloud, Docker, CI/CD). ",
+            "Réalisation de PoC, MVP et prototypes pour validation rapide d’idées produit. ",
+            "Renfort d’équipe ou pilotage complet de projet. ",
         ],
         technologies: ["Architecture logicielle", "Conseil", "Développement de logiciels", "R&D", "Gestion de projet IT"],
         current: true
     },
     {
-        period: "2024 - 2026",
-        role: "Ingénieur logiciel - Apprenti",
-        company: "ONTBO",
+        period: "Jan. 2024 - Déc. 2025",
+        role: "Ingénieur logiciel - Full-stack, DevOps & R&D IA",
+        company: "ONTBO - Compiègne",
         description: [
-            "Développement logiciel, de la conception à la mise en production. ",
-            "Projets combinant IA, Data et informatique affective. ",
-            "Activités de R&D : veille, prototypage, expérimentation. ",
-            "Travail collaboratif avec Git et bonnes pratiques logicielles. ",
-            "Déploiement et hébergement Cloud."
+            "Développement d’applications intégrant GenAI, data et informatique affective. ",
+            "Conception backend, APIs et interfaces utilisateurs (Python, FastAPI, TypeScript, React/Vue). ",
+            "Déploiement cloud et automatisation (Docker, CI/CD, AWS). ",
+            "Prototypage de solutions innovantes en contexte R&D. ",
+        ],
+        links: [
+            {href: "https://ontbo.com", label: "ontbo.com"},
+            {href: "https://api.ontbo.com", label: "api.ontbo.com"},
+            {href: "https://my.ontbo.com", label: "my.ontbo.com"},
         ],
         technologies: ["Architecture logicielle", "R&D", "IA", "Gestion de projet IT", "Cloud computing"],
         current: false
     },
     {
-        period: "Févr. 2025 - Mars. 2025",
-        role: "Ingénieur logiciel - Stagiaire",
-        company: "Nightingale Project",
+        period: "Fév. 2025 - Mar. 2025",
+        role: "Ingénieur logiciel - IA & Computer Vision",
+        company: "Nightingale Project - Mainz, Allemagne",
         description: [
-            "Implémentation de modèles de Machine Learning pour la détection de blessures (2D / 3D). ",
-            "Exploitation et préparation de datasets médicaux. ",
-            "Développement de pipelines Python temps réel pour l’analyse d’images. ",
-            "Extraction de caractéristiques et quantification de données. ",
-            "Déploiement via API REST et conteneurisation Docker."
+            "Implémentation de modèles ML pour la détection de blessures 2D/3D. ",
+            "Traitement de datasets médicaux et pipelines temps réel d’analyse d’images. ",
+            "Extraction de caractéristiques et quantification de données biomédicales. ",
+            "Déploiement via API REST et Docker. ",
+        ],
+        links: [
+            {href: "https://nightingaleheart.com", label: "nightingaleheart.com"},
         ],
         technologies: ["Machine learning", "API REST", "Docker", "Architecture logicielle", "Python"],
         current: false
     },
     {
-        period: "2020 - 2024",
-        role: "Ingénieur logiciel - Apprenti",
-        company: "UTeam",
+        period: "Jan. 2020 - Déc. 2023",
+        role: "Développeur logiciel - Consultant",
+        company: "UTeam - Compiègne",
         description: [
-            "Développement et maintenance d’applications métiers. ",
-            "Conception et prototypage de systèmes embarqués temps réel. ",
-            "Participation à des projets de robotique et de R&D. ",
-            "Analyse des besoins et accompagnement client. ",
-            "Contribution à l’architecture logicielle et à la gestion de projet IT."
+            "Développement et maintenance d’applications métiers Fullstack et systèmes embarqués (C/C++, IoT, ROS) ",
+            "Participation à des projets de robotique et R&D ",
+            "Analyse des besoins clients et accompagnement startups/PME/laboratoires ",
+            "Contribution à l’architecture logicielle et bonnes pratiques d’ingénierie ",
+        ],
+        links: [
+            {href: "https://uteam.fr/consultant/presentation/pierre-clement", label: "uteam.fr/consultant/presentation/pierre-clement"},
         ],
         technologies: ["Architecture logicielle", "R&D", "Conseil", "Gestion de projet IT", "Systèmes embarqués"],
         current: false
@@ -105,6 +115,11 @@ export const Experience = () => {
                                     <p className="text-sm text-muted-foreground mt-4">
                                         {exp.description}
                                     </p>
+                                    <div className={`mt-2 flex flex-row gap-2 text-primary hover:text-highlight transition-colors duration-300 ${idx % 2 === 0 ? "md:justify-end" : ""}`}>
+                                        {exp.links && exp.links.map((link, linkIdx) => (
+                                            <a href={link.href} target="_blank" rel="noopener noreferrer" key={linkIdx}>{link.label}</a>
+                                        ))}
+                                    </div>
                                     <div className={`flex flex-wrap gap-2 mt-4 ${idx % 2 === 0 ? "md:justify-end" : ""}`}>
                                         {exp.technologies.map((tech, techIdx) => (
                                             <span key={techIdx} className="px-3 py-1 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300">

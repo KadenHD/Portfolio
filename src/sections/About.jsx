@@ -5,12 +5,12 @@ const highlights = [
     {
         icon: Lightbulb,
         title: "R&D & Innovation",
-        description: "R&D, prototypage, PoC et tests itératifs pour explorer des solutions innovantes et valider rapidement la faisabilité."
+        description: "R&D, prototypage, PoC, MVP et tests itératifs pour explorer des solutions innovantes et valider rapidement la faisabilité."
     },
     {
         icon: Rocket,
         title: "Pilotage de projet",
-        description: "Accompagnement et pilotage de A à Z de ton projet numérique."
+        description: "Structuration et pilotage de A à Z de projet numérique. Accompagnement technique long terme."
     },
     {
         icon: Code2,
@@ -64,7 +64,7 @@ export const About = () => {
                         </FadeUp>
                         <FadeUp delay={0.4}>
                             <p>
-                                Curieux et orienté R&D, je travaille régulièrement sur des projets intégrant
+                                Curieux et orienté innovation, je travaille régulièrement sur des projets intégrant
                                 l’intelligence artificielle et l’expérimentation technique.
                                 J’aime explorer, prototyper rapidement et itérer pour construire des solutions
                                 pertinentes, alignées avec les enjeux réels du projet.
