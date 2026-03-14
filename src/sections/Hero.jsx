@@ -21,6 +21,10 @@ const socialLinks = [
 ]
 
 const skills = [
+  "Postgres",
+  "Prisma",
+  "Alembic",
+  "SQLAlchemy",
   "Django",
   "Flask",
   "Symfony",
