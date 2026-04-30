@@ -81,7 +81,7 @@ const privacyPolicy = [
   {
     title: "Cookies",
     texts: [
-      "Ce site n’utilise aucun cookie de suivi ou de mesure d’audience.",
+      "Ce site utilise PostHog pour la mesure d’audience et l’amélioration des performances.",
       "Aucun dépôt de cookie n’est effectué lors de la navigation."
     ],
     spacing: true
