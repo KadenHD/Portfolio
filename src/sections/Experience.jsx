@@ -2,6 +2,19 @@ import {FadeUp} from "@/components/FadeUp"
 
 const experiences = [
     {
+        period: "Mai. 2026 - Aujourd'hui",
+        role: "Ingénieur logiciel - Conseil IT & Développement Full-stack",
+        company: "Consultant Indépendant - Breuil-le-Sec",
+        description: [
+            "Participation à l'évolution d'une solution métier déployée dans plus de 300 magasins. ",
+            "Conception et développement de solutions logicielles sur mesure (web, mobile, API). ",
+            "Gestion des tests, de la recette et du maintien en conditions opérationnelles des applications. ",
+            "Analyse et résolution des incidents, correction des anomalies et mise en œuvre des évolutions fonctionnelles. ",
+        ],
+        technologies: ["Architecture logicielle", "Conseil", "Développement Full-stack", "Gestion de projet IT", "NodeJS"],
+        current: true
+    },
+    {
         period: "Jan. 2026 - Aujourd'hui",
         role: "Ingénieur logiciel - Conseil IT & Développement",
         company: "Consultant Indépendant - France",
