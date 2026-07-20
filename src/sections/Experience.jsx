@@ -4,7 +4,7 @@ const experiences = [
     {
         period: "Mai. 2026 - Aujourd'hui",
         role: "Ingénieur logiciel - Conseil IT & Développement Full-stack",
-        company: "Weldom - Breuil-le-Sec",
+        company: "Weldom (Indépendant) - Breuil-le-Sec",
         description: [
             "Participation à l'évolution d'une solution métier déployée dans plus de 300 magasins. ",
             "Conception et développement de solutions logicielles sur mesure (web, mobile, API). ",
