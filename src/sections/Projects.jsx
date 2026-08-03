@@ -23,9 +23,9 @@ const projects = [
         description: "Projet de recherche appliquée sur la segmentation automatique des blessures de guerre à partir de scans 3D. Le système utilise DeepSkin pour détecter les plaies sur des projections 2D, puis reprojette les résultats sur le modèle 3D pour une visualisation interactive en web. J’ai contribué à ce projet en Allemagne durant la phase de R&D et les tests itératifs, en réalisant l’intégration du modèle DeepSkin, pour une segmentation en temps réel, jusqu’à la conception et mise à disposition de l’API.",
         image: "/projects/nightingale.webp",
         tags: ["Santé", "R&D", "CNN", "Machine Learning", "3D", "IA", "Traitement d'image", "Temps réel", "Pipeline", "Python", "API", "Docker", "Git"],
-        link: "https://www.nightingaleheart.com/",
+        link: "https://www.nightingaleheart.com",
         github: "https://github.com/Nico-Curti/Deepskin",
-        demo: "https://healthview.uni-mainz.de/segmentation-3d-prediction"
+        demo: "https://segmentation.nightingaleheart.com"
     },
     {
         title: "LynxJS ✦ Développement Cross-Platform",
