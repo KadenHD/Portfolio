@@ -128,9 +128,9 @@ export const Experience = () => {
                                     <p className="text-sm text-muted-foreground mt-4">
                                         {exp.description}
                                     </p>
-                                    <div className={`mt-2 flex flex-row gap-2 text-primary hover:text-highlight transition-colors duration-300 ${idx % 2 === 0 ? "md:justify-end" : ""}`}>
+                                    <div className={`mt-2 flex flex-row gap-2 text-primary transition-colors duration-300 ${idx % 2 === 0 ? "md:justify-end" : ""}`}>
                                         {exp.links && exp.links.map((link, linkIdx) => (
-                                            <a href={link.href} target="_blank" rel="noopener noreferrer" key={linkIdx}>{link.label}</a>
+                                            <a className="hover:text-highlight" href={link.href} target="_blank" rel="noopener noreferrer" key={linkIdx}>{link.label}</a>
                                         ))}
                                     </div>
                                     <div className={`flex flex-wrap gap-2 mt-4 ${idx % 2 === 0 ? "md:justify-end" : ""}`}>
